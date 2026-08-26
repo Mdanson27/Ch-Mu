@@ -1,66 +1,111 @@
-const loader=document.getElementById('app-loader');
-const typedName=document.getElementById('typed-name');
-const loaderLine=document.querySelector('.loader-line');
-const page=document.getElementById('main-content');
-const nameText='Christine Nanyombi Mubiru, CHRA';
-const sleep=(ms)=>new Promise((resolve)=>setTimeout(resolve,ms));
+const PROFILE_URL = 'https://mdanson27.github.io/Ch-Mu/';
+const WHATSAPP_NUMBER = '256700806036';
+const WHATSAPP_MESSAGE = 'Hello Ms. Mubiru, I came across your digital profile and would like to connect regarding a professional matter. Kindly let me know a convenient time for a brief conversation. Thank you.';
+const EMAIL_ADDRESS = 'cnanyombi@mubs.ac.ug';
+const EMAIL_SUBJECT = 'Professional Enquiry – Christine Nanyombi Mubiru';
+const EMAIL_BODY = 'Dear Ms. Mubiru,\n\nI came across your digital profile and would like to connect regarding a professional matter. Kindly let me know a convenient time for a brief discussion.\n\nKind regards,';
 
-async function typeName(){
-  typedName.textContent='';
-  for(const char of nameText){
-    typedName.textContent+=char;
-    await sleep(char===' '?24:42);
+const loader = document.getElementById('app-loader');
+const typedName = document.getElementById('typed-name');
+const loaderLine = document.querySelector('.loader-line');
+const page = document.getElementById('main-content');
+const qrModal = document.getElementById('qr-modal');
+const nameText = 'Christine Nanyombi Mubiru';
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+function prepareContactLinks() {
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  const emailUrl = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`;
+  document.querySelectorAll('[data-whatsapp]').forEach((link) => link.setAttribute('href', whatsappUrl));
+  document.querySelectorAll('[data-email]').forEach((link) => link.setAttribute('href', emailUrl));
+}
+
+async function typeName() {
+  if (!typedName) return;
+  typedName.textContent = '';
+  for (const char of nameText) {
+    typedName.textContent += char;
+    await sleep(char === ' ' ? 26 : 44);
   }
 }
 
-async function runLoader(){
-  await sleep(320);
+async function runLoader() {
+  await sleep(260);
   await typeName();
   loaderLine?.classList.add('ready');
-  await sleep(620);
+  await sleep(520);
   loader?.classList.add('fade-out');
   page?.classList.remove('is-hidden');
+  document.body.classList.add('page-ready');
   revealOnScroll();
 }
 
-function revealOnScroll(){
-  const items=document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){items.forEach((item)=>item.classList.add('visible'));return;}
-  const observer=new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{
-      if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+function revealOnScroll() {
+  const items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach((item) => item.classList.add('visible'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
     });
-  },{threshold:.1});
-  items.forEach((item)=>observer.observe(item));
+  }, { threshold: 0.1 });
+  items.forEach((item) => observer.observe(item));
 }
 
-function buildVCard(){
+function buildVCard() {
   return [
-    'BEGIN:VCARD','VERSION:3.0','N:Mubiru;Christine Nanyombi;;;','FN:Christine Nanyombi Mubiru, CHRA',
-    'ORG:Makerere University Business School','TITLE:Chief Human Resources Officer','TEL;TYPE=CELL:+256700806036',
-    'EMAIL;TYPE=WORK:cnanyombi@mubs.ac.ug','URL:https://mubs.ac.ug/','ADR;TYPE=WORK:;;Plot 21A, Port Bell Road, Nakawa;Kampala;;;Uganda',
-    'NOTE:Professional digital profile: https://mdanson27.github.io/Ch-Mu/','END:VCARD'
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'N:Mubiru;Christine Nanyombi;;;',
+    'FN:Christine Nanyombi Mubiru',
+    'ORG:Makerere University Business School',
+    'TITLE:Chief Human Resources Officer',
+    'TEL;TYPE=CELL:+256700806036',
+    'EMAIL;TYPE=WORK:cnanyombi@mubs.ac.ug',
+    'URL:https://mubs.ac.ug/',
+    `URL;TYPE=Digital Profile:${PROFILE_URL}`,
+    'ADR;TYPE=WORK:;;Plot 21A, Port Bell Road, Nakawa;Kampala;;;Uganda',
+    'END:VCARD'
   ].join('\n');
 }
 
-document.getElementById('save-contact')?.addEventListener('click',()=>{
-  const blob=new Blob([buildVCard()],{type:'text/vcard;charset=utf-8'});
-  const url=URL.createObjectURL(blob);
-  const link=document.createElement('a');
-  link.href=url;link.download='christine-nanyombi-mubiru.vcf';document.body.appendChild(link);link.click();link.remove();URL.revokeObjectURL(url);
-});
+function saveContact() {
+  const blob = new Blob([buildVCard()], { type: 'text/vcard;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'christine-nanyombi-mubiru.vcf';
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
 
-document.getElementById('share-profile')?.addEventListener('click',async(event)=>{
-  const button=event.currentTarget;
-  const data={title:'Christine Nanyombi Mubiru, CHRA',text:'Chief Human Resources Officer — Makerere University Business School',url:window.location.href};
-  if(navigator.share){try{await navigator.share(data);}catch(_){ }return;}
-  try{
-    await navigator.clipboard.writeText(window.location.href);
-    const label=button.querySelector('span:last-child');
-    const original=label?.textContent||'Share';
-    if(label)label.textContent='Copied';
-    setTimeout(()=>{if(label)label.textContent=original;},1600);
-  }catch(_){window.prompt('Copy this profile link:',window.location.href);}
-});
+document.getElementById('save-contact')?.addEventListener('click', saveContact);
+document.getElementById('sticky-save')?.addEventListener('click', saveContact);
 
-window.addEventListener('load',runLoader);
+function openQr() {
+  if (!qrModal) return;
+  qrModal.classList.add('open');
+  qrModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-lock');
+}
+
+function closeQr() {
+  if (!qrModal) return;
+  qrModal.classList.remove('open');
+  qrModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-lock');
+}
+
+document.querySelectorAll('[data-open-qr]').forEach((button) => button.addEventListener('click', openQr));
+document.querySelectorAll('[data-close-qr]').forEach((button) => button.addEventListener('click', closeQr));
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeQr(); });
+
+prepareContactLinks();
+window.addEventListener('load', runLoader);
