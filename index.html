@@ -2,182 +2,202 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Official digital profile for Christine Nanyombi Mubiru, CHRA — Chief Human Resources Officer at Makerere University Business School." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#eaf7ff" />
+  <meta name="description" content="Professional digital profile for Christine Nanyombi Mubiru, CHRA — Chief Human Resources Officer at Makerere University Business School." />
   <title>Christine Nanyombi Mubiru, CHRA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="app-loader" class="app-loader" aria-live="polite" aria-label="Loading profile">
-    <div class="loader-shell">
-      <div class="loader-badge">AutoMinds Africa</div>
-      <div class="printer-card">
-        <div class="printer-top">
-          <span class="printer-light"></span>
-          <span class="printer-title">PROFILE INITIALIZING</span>
-        </div>
-        <div class="paper-window">
-          <div class="paper-sheet"></div>
-          <p class="typed-line" id="typed-name"></p>
-          <p class="typed-subtitle" id="typed-subtitle"></p>
-          <span class="typing-cursor"></span>
-        </div>
-        <div class="progress-wrap">
-          <div class="progress-bar" id="loader-progress"></div>
-        </div>
-        <div class="loader-status" id="loader-status">Preparing executive digital profile...</div>
-      </div>
+  <div id="app-loader" class="app-loader" aria-live="polite" aria-label="Loading Christine's profile">
+    <div class="loader-orbit" aria-hidden="true">
+      <span></span><span></span><span></span>
     </div>
+    <div class="loader-name-wrap">
+      <p id="typed-name" class="loader-name"></p>
+      <span class="loader-cursor" aria-hidden="true"></span>
+    </div>
+    <div class="loader-line" aria-hidden="true"></div>
   </div>
 
-  <div class="page-bg"></div>
-  <main class="page hidden" id="main-content">
-    <section class="hero-card glass reveal">
-      <div class="hero-topline">Official Digital Profile</div>
-      <div class="hero-grid">
-        <div class="identity-panel">
-          <div class="avatar-frame">
-            <div class="avatar-ring"></div>
-            <div class="avatar-placeholder" aria-label="Christine initials">CNM</div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="page-grid" aria-hidden="true"></div>
+
+  <main id="main-content" class="profile-shell is-hidden">
+    <section class="profile-screen hero-screen reveal">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+
+      <div class="profile-kicker">Executive Digital Profile</div>
+
+      <div class="photo-box" aria-label="Profile photo placeholder">
+        <div class="photo-inner">CNM</div>
+        <div class="photo-corner photo-corner-one"></div>
+        <div class="photo-corner photo-corner-two"></div>
+      </div>
+
+      <div class="hero-copy">
+        <h1>Christine Nanyombi Mubiru <span>CHRA</span></h1>
+        <p class="hero-role">Chief Human Resources Officer</p>
+        <p class="hero-org">Makerere University Business School</p>
+        <div class="hero-meta">
+          <span>Nakawa, Kampala</span>
+          <span>Strategic HR Leadership</span>
+        </div>
+      </div>
+
+      <div class="action-dock" aria-label="Profile actions">
+        <a class="action-tile primary" href="tel:+256700806036" aria-label="Call Christine">
+          <span class="action-icon">☎</span><span>Call</span>
+        </a>
+        <a class="action-tile primary" href="https://wa.me/256700806036" target="_blank" rel="noopener" aria-label="WhatsApp Christine">
+          <span class="action-icon">◉</span><span>WhatsApp</span>
+        </a>
+        <a class="action-tile" href="mailto:cnanyombi@mubs.ac.ug" aria-label="Email Christine">
+          <span class="action-icon">✉</span><span>Email</span>
+        </a>
+        <a class="action-tile" href="https://www.linkedin.com/in/christine-nanyombi-mubiru-2118a454/" target="_blank" rel="noopener" aria-label="Open LinkedIn">
+          <span class="action-icon">in</span><span>LinkedIn</span>
+        </a>
+        <button class="action-tile" id="save-contact" type="button" aria-label="Save Christine's contact">
+          <span class="action-icon">＋</span><span>Save</span>
+        </button>
+        <button class="action-tile" id="share-profile" type="button" aria-label="Share Christine's profile">
+          <span class="action-icon">↗</span><span>Share</span>
+        </button>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="profile-screen story-screen reveal">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">Profile</p>
+          <h2>Leadership built around people.</h2>
+        </div>
+        <span class="section-number">01</span>
+      </div>
+
+      <div class="story-grid">
+        <article class="story-card featured-card">
+          <p class="lead-copy">
+            Christine Nanyombi Mubiru, CHRA, is a senior human resources executive serving as Chief Human Resources Officer at Makerere University Business School.
+          </p>
+          <p>
+            Her professional focus spans strategic HR leadership, talent management, institutional transformation, employee experience, employee relations, and performance management.
+          </p>
+          <div class="quote-strip">
+            <span></span>
+            <p>Strategic HR Leader · Talent Management · Institutional Transformation · Employee Experience</p>
           </div>
-          <div class="identity-copy">
-            <h1>Christine Nanyombi Mubiru, <span>CHRA</span></h1>
-            <p class="role">Chief Human Resources Officer</p>
-            <p class="org">Makerere University Business School</p>
-            <div class="hero-tags">
-              <span>Nakawa, Kampala</span>
-              <span>Executive Profile</span>
-              <span>People Strategy</span>
+        </article>
+
+        <article class="expertise-card">
+          <div class="card-label">Core Expertise</div>
+          <div class="expertise-grid">
+            <span>Strategic HR Leadership</span>
+            <span>Talent Management</span>
+            <span>Institutional Transformation</span>
+            <span>Employee Experience</span>
+            <span>Employee Relations</span>
+            <span>Performance Management</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="profile-screen journey-screen reveal">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">Experience & Contact</p>
+          <h2>Professional journey.</h2>
+        </div>
+        <span class="section-number">02</span>
+      </div>
+
+      <div class="journey-layout">
+        <div class="timeline-card">
+          <article class="timeline-item">
+            <div class="timeline-marker"><span></span></div>
+            <div>
+              <p class="timeline-date">2023 — Present</p>
+              <h3>Chief Human Resources Officer</h3>
+              <p>Makerere University Business School</p>
             </div>
-          </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker"><span></span></div>
+            <div>
+              <p class="timeline-date">2014 — 2023</p>
+              <h3>Assistant Director</h3>
+              <p>Makerere University Business School</p>
+            </div>
+          </article>
         </div>
-        <div class="quick-stats">
-          <div class="stat-card">
-            <strong>2023 — Present</strong>
-            <span>Chief Human Resources leadership role</span>
-          </div>
-          <div class="stat-card">
-            <strong>2014 — 2023</strong>
-            <span>Assistant Director</span>
-          </div>
-          <div class="stat-card">
-            <strong>6+</strong>
-            <span>Core expertise areas highlighted</span>
-          </div>
-        </div>
-      </div>
-      <div class="action-grid">
-        <a class="action-btn primary" href="tel:+256700806036">Call</a>
-        <a class="action-btn primary" href="https://wa.me/256700806036" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="action-btn" href="mailto:cnanyombi@mubs.ac.ug">Email</a>
-        <a class="action-btn" href="https://www.linkedin.com/in/christine-nanyombi-mubiru-2118a454/" target="_blank" rel="noopener">LinkedIn</a>
-        <button class="action-btn" id="save-contact">Save Contact</button>
-        <button class="action-btn" id="share-profile">Share</button>
-      </div>
-    </section>
 
-    <section class="content-grid">
-      <article class="content-card reveal">
-        <div class="section-eyebrow">Professional Summary</div>
-        <h2>About Christine</h2>
-        <p>
-          Christine Nanyombi Mubiru, CHRA, is a senior human resources executive serving as
-          Chief Human Resources Officer at Makerere University Business School. Her profile centers on
-          strategic HR leadership, talent management, institutional transformation, and employee experience.
-        </p>
-        <p>
-          She brings leadership experience spanning senior HR management and institutional support,
-          with a strong focus on people systems, employee relations, and performance management.
-        </p>
-      </article>
-
-      <article class="content-card reveal">
-        <div class="section-eyebrow">Contact & Presence</div>
-        <h2>Direct Information</h2>
-        <ul class="info-list">
-          <li><span>Phone</span><a href="tel:+256700806036">+256 700 806 036</a></li>
-          <li><span>Email</span><a href="mailto:cnanyombi@mubs.ac.ug">cnanyombi@mubs.ac.ug</a></li>
-          <li><span>Website</span><a href="https://mubs.ac.ug/" target="_blank" rel="noopener">www.mubs.ac.ug</a></li>
-          <li><span>Instagram</span><a href="https://www.instagram.com/christinemubiru/" target="_blank" rel="noopener">@christinemubiru</a></li>
-          <li><span>Facebook</span><span class="muted">Christine Nanyombi Mubiru (link to be confirmed)</span></li>
-          <li><span>Location</span><a href="https://maps.google.com/?q=Makerere+University+Business+School+Nakawa+Kampala+Uganda" target="_blank" rel="noopener">Makerere University Business School, Nakawa</a></li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="wide-card reveal">
-      <div class="section-eyebrow">Core Strengths</div>
-      <h2>Expertise & Competencies</h2>
-      <div class="chip-cloud">
-        <span>Strategic HR Leadership</span>
-        <span>Talent Management</span>
-        <span>Institutional Transformation</span>
-        <span>Employee Experience</span>
-        <span>Employee Relations</span>
-        <span>Performance Management</span>
-        <span>People Strategy</span>
-        <span>Executive Leadership Support</span>
-      </div>
-    </section>
-
-    <section class="wide-card reveal">
-      <div class="section-eyebrow">Career Journey</div>
-      <h2>Professional Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="dot"></div>
-          <div class="timeline-copy">
-            <div class="timeline-year">2023 — Present</div>
-            <h3>Chief Human Resources Officer</h3>
-            <p>Makerere University Business School</p>
-            <small>Leading strategic HR direction, talent priorities, institutional transformation, and employee experience.</small>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="dot"></div>
-          <div class="timeline-copy">
-            <div class="timeline-year">2014 — 2023</div>
-            <h3>Assistant Director</h3>
-            <p>Makerere University Business School</p>
-            <small>Supported institutional leadership within a senior administrative capacity.</small>
-          </div>
+        <div class="contact-card">
+          <div class="card-label">Direct Contact</div>
+          <a href="tel:+256700806036"><span>Phone</span><strong>+256 700 806 036</strong></a>
+          <a href="mailto:cnanyombi@mubs.ac.ug"><span>Email</span><strong>cnanyombi@mubs.ac.ug</strong></a>
+          <a href="https://mubs.ac.ug/" target="_blank" rel="noopener"><span>Website</span><strong>www.mubs.ac.ug</strong></a>
+          <a href="https://maps.google.com/?q=Makerere+University+Business+School+Nakawa+Kampala+Uganda" target="_blank" rel="noopener"><span>Location</span><strong>Nakawa, Kampala</strong></a>
         </div>
       </div>
     </section>
 
-    <section class="content-grid">
-      <article class="content-card reveal highlight-card">
-        <div class="section-eyebrow">Institution</div>
-        <h2>Makerere University Business School</h2>
-        <p>
-          Based in Nakawa, Kampala, Makerere University Business School is a leading institution of higher learning.
-          Christine's profile aligns with a professional, executive, and institutionally grounded leadership image.
-        </p>
-        <a class="inline-link" href="https://mubs.ac.ug/" target="_blank" rel="noopener">Visit the MUBS website</a>
-      </article>
-
-      <article class="content-card reveal highlight-card">
-        <div class="section-eyebrow">Professional Networks</div>
-        <h2>Online Presence</h2>
-        <div class="social-stack">
-          <a href="https://www.linkedin.com/in/christine-nanyombi-mubiru-2118a454/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://www.instagram.com/christinemubiru/" target="_blank" rel="noopener">Instagram</a>
-          <a href="mailto:cnanyombi@mubs.ac.ug">Email</a>
-          <a href="https://wa.me/256700806036" target="_blank" rel="noopener">WhatsApp</a>
+    <section class="profile-screen connect-screen reveal">
+      <div class="section-heading-row compact-heading">
+        <div>
+          <p class="eyebrow">Connect</p>
+          <h2>Professional presence.</h2>
         </div>
-      </article>
-    </section>
-
-    <footer class="profile-footer reveal">
-      <div>
-        <strong>Christine Nanyombi Mubiru, CHRA</strong>
-        <p>Chief Human Resources Officer · Makerere University Business School</p>
+        <span class="section-number">03</span>
       </div>
-      <a href="https://automindsafrica.com" target="_blank" rel="noopener">Made by AutoMinds Africa</a>
-    </footer>
+
+      <div class="connect-grid">
+        <a class="network-card linkedin" href="https://www.linkedin.com/in/christine-nanyombi-mubiru-2118a454/" target="_blank" rel="noopener">
+          <span class="network-mark">in</span>
+          <div><small>Professional Network</small><strong>LinkedIn</strong></div>
+          <span class="network-arrow">↗</span>
+        </a>
+        <a class="network-card" href="https://www.instagram.com/christinemubiru/" target="_blank" rel="noopener">
+          <span class="network-mark">◎</span>
+          <div><small>Social Profile</small><strong>Instagram</strong></div>
+          <span class="network-arrow">↗</span>
+        </a>
+        <a class="network-card" href="mailto:cnanyombi@mubs.ac.ug">
+          <span class="network-mark">@</span>
+          <div><small>Official Contact</small><strong>Email</strong></div>
+          <span class="network-arrow">↗</span>
+        </a>
+        <a class="network-card" href="https://wa.me/256700806036" target="_blank" rel="noopener">
+          <span class="network-mark">◉</span>
+          <div><small>Direct Message</small><strong>WhatsApp</strong></div>
+          <span class="network-arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="institution-strip">
+        <div class="institution-badge">MUBS</div>
+        <div>
+          <small>Current Institution</small>
+          <strong>Makerere University Business School</strong>
+        </div>
+        <a href="https://mubs.ac.ug/" target="_blank" rel="noopener">Visit site ↗</a>
+      </div>
+
+      <footer class="profile-footer">
+        <div class="footer-rule"></div>
+        <p>Christine Nanyombi Mubiru, CHRA</p>
+        <span>Chief Human Resources Officer · Makerere University Business School</span>
+        <a href="https://automindsafrica.com" target="_blank" rel="noopener">Made by AutoMinds Africa</a>
+      </footer>
+    </section>
   </main>
 
   <script src="script.js"></script>
