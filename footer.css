@@ -1,0 +1,141 @@
+.autominds-footer{
+  position:relative;
+  margin:8px 0 0;
+  padding:22px 16px 4px;
+  text-align:center;
+}
+.autominds-footer::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:8%;
+  right:8%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(24,81,126,.24),transparent);
+}
+.autominds-link{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  color:var(--navy-900);
+  padding:8px 18px 12px;
+  border-radius:20px;
+  transition:transform .2s ease;
+}
+.autominds-link:hover{transform:translateY(-2px)}
+.hr-light-animation{
+  position:relative;
+  display:grid;
+  grid-template-columns:34px 42px 54px 42px 34px;
+  align-items:center;
+  justify-content:center;
+  min-height:58px;
+}
+.hr-person{
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border:1px solid #d3e2ec;
+  border-radius:50%;
+  background:#f8fbfd;
+  color:#7890a2;
+  font-size:.72rem;
+  animation:hrPersonPulse 4.6s ease-in-out infinite;
+}
+.hr-person-right{animation-delay:.18s}
+.hr-connection{
+  height:2px;
+  transform:scaleX(0);
+  background:linear-gradient(90deg,#8fb2c9,#2b78ad);
+  box-shadow:0 0 8px rgba(47,132,188,.16);
+  animation:hrConnection 4.6s ease-in-out infinite;
+}
+.hr-connection-left{transform-origin:right center}
+.hr-connection-right{transform-origin:left center;animation-delay:.12s}
+.bulb-wrap{
+  position:relative;
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  color:#748a9a;
+}
+.bulb-wrap>i{
+  position:relative;
+  z-index:2;
+  font-size:2rem;
+  animation:bulbIgnite 4.6s ease-in-out infinite;
+}
+.bulb-glow{
+  position:absolute;
+  inset:8px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,213,92,.58) 0%,rgba(255,213,92,.18) 45%,transparent 72%);
+  opacity:0;
+  transform:scale(.45);
+  animation:bulbGlow 4.6s ease-in-out infinite;
+}
+.autominds-copy{display:flex;flex-direction:column;align-items:center}
+.autominds-copy small{
+  color:#8395a4;
+  font-size:.62rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+}
+.autominds-copy strong{
+  margin-top:3px;
+  font-size:.86rem;
+  letter-spacing:.02em;
+  color:#8798a6;
+}
+.autominds-copy strong span:first-child{
+  animation:brandLightOne 4.6s ease-in-out infinite;
+}
+.autominds-copy strong span:last-child{
+  animation:brandLightTwo 4.6s ease-in-out infinite;
+}
+@keyframes hrPersonPulse{
+  0%,14%,100%{color:#8496a4;border-color:#d3e2ec;background:#f8fbfd;transform:scale(1)}
+  20%,32%{color:#1f6e9f;border-color:#acd0e7;background:#eef8fd;transform:scale(1.06)}
+  45%,92%{color:#54758d;transform:scale(1)}
+}
+@keyframes hrConnection{
+  0%,20%,100%{transform:scaleX(0);opacity:.15}
+  29%,56%{transform:scaleX(1);opacity:1}
+  68%,96%{transform:scaleX(0);opacity:.15}
+}
+@keyframes bulbIgnite{
+  0%,32%,100%{color:#7d909d;text-shadow:none;transform:scale(1)}
+  40%,64%{color:#f3b61f;text-shadow:0 0 8px rgba(243,182,31,.5),0 0 18px rgba(243,182,31,.22);transform:scale(1.08)}
+  74%,94%{color:#c6901d;text-shadow:0 0 8px rgba(243,182,31,.28);transform:scale(1)}
+}
+@keyframes bulbGlow{
+  0%,34%,100%{opacity:0;transform:scale(.45)}
+  43%,62%{opacity:1;transform:scale(1.35)}
+  76%,94%{opacity:.32;transform:scale(.9)}
+}
+@keyframes brandLightOne{
+  0%,48%,100%{color:#8798a6;text-shadow:none}
+  56%,88%{color:#124d76;text-shadow:0 0 10px rgba(63,145,202,.16)}
+}
+@keyframes brandLightTwo{
+  0%,58%,100%{color:#8798a6;text-shadow:none}
+  66%,88%{color:#2478b5;text-shadow:0 0 10px rgba(63,145,202,.22)}
+}
+@media(max-width:760px){
+  .autominds-footer{padding-top:18px;margin-top:2px}
+  .hr-light-animation{grid-template-columns:30px 34px 48px 34px 30px;min-height:52px}
+  .hr-person{width:29px;height:29px}
+  .bulb-wrap{width:48px;height:48px}
+  .bulb-wrap>i{font-size:1.75rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .hr-person,.hr-connection,.bulb-wrap>i,.bulb-glow,.autominds-copy strong span{animation:none!important}
+  .bulb-wrap>i{color:#f3b61f}
+  .autominds-copy strong span:first-child{color:#124d76}
+  .autominds-copy strong span:last-child{color:#2478b5}
+}
