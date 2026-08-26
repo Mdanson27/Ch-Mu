@@ -67,7 +67,6 @@ function buildVCard() {
     'TITLE:Chief Human Resources Officer',
     'TEL;TYPE=CELL:+256700806036',
     'EMAIL;TYPE=WORK:cnanyombi@mubs.ac.ug',
-    'URL:https://mubs.ac.ug/',
     `URL;TYPE=Digital Profile:${PROFILE_URL}`,
     'ADR;TYPE=WORK:;;Plot 21A, Port Bell Road, Nakawa;Kampala;;;Uganda',
     'END:VCARD'
