@@ -1,4 +1,3 @@
-const PROFILE_URL = 'https://mdanson27.github.io/Ch-Mu/';
 const WHATSAPP_NUMBER = '256700806036';
 const WHATSAPP_MESSAGE = 'Hello Ms. Mubiru, I came across your digital profile and would like to connect regarding a professional matter. Kindly let me know a convenient time for a brief conversation. Thank you.';
 const EMAIL_ADDRESS = 'cnanyombi@mubs.ac.ug';
@@ -67,7 +66,7 @@ function buildVCard() {
     'TITLE:Chief Human Resources Officer',
     'TEL;TYPE=CELL:+256700806036',
     'EMAIL;TYPE=WORK:cnanyombi@mubs.ac.ug',
-    `URL;TYPE=Digital Profile:${PROFILE_URL}`,
+    'URL:https://mubs.ac.ug/',
     'ADR;TYPE=WORK:;;Plot 21A, Port Bell Road, Nakawa;Kampala;;;Uganda',
     'END:VCARD'
   ].join('\n');
