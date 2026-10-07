@@ -3,20 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#f4f8fc" />
-  <meta name="description" content="Digital profile for Christine Nanyombi Mubiru, Chief Human Resources Officer at Makerere University Business School." />
+  <meta name="theme-color" content="#f7f4ef" />
+  <meta name="description" content="Digital profile for Christine Nanyombi Mubiru, Chief, Human Resource at Makerere University Business School." />
   <title>Christine Nanyombi Mubiru</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="experience.css" />
   <link rel="stylesheet" href="footer.css" />
 </head>
 <body>
   <div id="app-loader" class="app-loader" aria-live="polite" aria-label="Loading Christine's profile">
-    <div class="loader-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="loader-mark" aria-hidden="true">
+      <span class="loader-node one"></span>
+      <span class="loader-node two"></span>
+      <span class="loader-node three"></span>
+      <span class="loader-thread thread-one"></span>
+      <span class="loader-thread thread-two"></span>
+    </div>
     <div class="loader-name-row">
       <p id="typed-name" class="loader-name"></p>
       <span class="loader-cursor"></span>
@@ -29,6 +34,14 @@
 
   <main id="main-content" class="profile-shell is-hidden">
     <section class="panel hero-panel reveal">
+      <svg class="hero-line-art" viewBox="0 0 700 360" aria-hidden="true">
+        <path d="M40 260 C145 90, 245 80, 330 205 S535 330, 665 135" />
+        <path d="M95 300 C205 165, 300 155, 390 235 S555 300, 635 205" />
+        <circle cx="92" cy="236" r="7" />
+        <circle cx="331" cy="205" r="8" />
+        <circle cx="615" cy="166" r="7" />
+      </svg>
+
       <div class="institution-top">
         <img src="Mubs-logo.png" alt="Makerere University Business School logo" class="mubs-logo hero-logo" />
         <div>
@@ -42,21 +55,16 @@
       </div>
 
       <div class="hero-copy">
+        <p class="warm-kicker">People · Culture · Institutional Growth</p>
         <h1>Christine Nanyombi Mubiru</h1>
-        <p class="hero-role">Chief Human Resources Officer</p>
-        <p class="hero-org">Makerere University Business School · Nakawa, Kampala</p>
+        <p class="hero-role">Chief, Human Resource</p>
+        <p class="hero-org">Makerere University Business School · Kampala, Uganda</p>
       </div>
 
       <div class="hero-actions" aria-label="Primary profile actions">
-        <a class="primary-action" href="tel:+256700806036">
-          <i class="fa-solid fa-phone"></i><span>Call</span>
-        </a>
-        <button class="primary-action save-action" id="save-contact" type="button">
-          <i class="fa-solid fa-address-card"></i><span>Save Contact</span>
-        </button>
-        <a class="primary-action whatsapp-action" href="#" data-whatsapp target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
-        </a>
+        <a class="primary-action call-action" href="tel:+256700806036"><i class="fa-solid fa-phone"></i><span>Call</span></a>
+        <button class="primary-action save-action" id="save-contact" type="button"><i class="fa-solid fa-address-card"></i><span>Save Contact</span></button>
+        <a class="primary-action whatsapp-action" href="#" data-whatsapp target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
       </div>
 
       <div class="secondary-actions">
@@ -65,26 +73,29 @@
         <button type="button" data-open-qr><i class="fa-solid fa-qrcode"></i> QR Code</button>
       </div>
 
-      <div class="scroll-tease"><span>Explore profile</span><i class="fa-solid fa-chevron-down"></i></div>
+      <div class="scroll-tease"><span>Discover more</span><i class="fa-solid fa-chevron-down"></i></div>
     </section>
 
-    <section class="panel profile-panel reveal">
-      <div class="section-head">
-        <div><p class="eyebrow">About</p><h2>People-focused leadership with institutional impact.</h2></div>
-        <span class="section-index">01</span>
+    <section class="panel story-panel reveal">
+      <div class="section-head compact-head">
+        <div><p class="eyebrow">Profile</p><h2>Leadership built around people.</h2></div>
+        <div class="experience-pill"><strong>22+</strong><span>years at MUBS</span></div>
       </div>
 
-      <div class="about-grid">
-        <article class="about-card">
-          <p class="lead-copy">Christine Nanyombi Mubiru is a senior Human Resources leader at Makerere University Business School, currently serving as Chief Human Resources Officer.</p>
-          <p>Her work centres on strategic HR leadership, talent management, institutional transformation, employee experience, employee relations and performance management.</p>
-          <div class="focus-line"><span></span><strong>Strategic HR Leadership · Talent Management · Institutional Transformation · Employee Experience</strong></div>
+      <div class="story-grid">
+        <article class="story-card">
+          <p class="lead-copy">Christine is a people-focused Human Resource leader with more than two decades of service at Makerere University Business School.</p>
+          <p>Her work brings together people, performance and institutional development, with a practical focus on building strong teams and positive employee experiences.</p>
+          <div class="signature-line"><span></span><strong>Strategic HR Leadership · Talent · Employee Experience</strong></div>
         </article>
 
-        <article class="expertise-card">
-          <p class="card-label">Core Expertise</p>
-          <div class="expertise-list">
-            <span>Strategic HR Leadership</span><span>Talent Management</span><span>Institutional Transformation</span><span>Employee Experience</span><span>Employee Relations</span><span>Performance Management</span>
+        <article class="strength-card">
+          <p class="card-label">What she brings</p>
+          <div class="strength-list">
+            <span><i class="fa-solid fa-users"></i> People Leadership</span>
+            <span><i class="fa-solid fa-seedling"></i> Talent Development</span>
+            <span><i class="fa-solid fa-arrow-trend-up"></i> Performance</span>
+            <span><i class="fa-solid fa-people-arrows"></i> Employee Relations</span>
           </div>
         </article>
       </div>
@@ -92,102 +103,60 @@
 
     <section class="panel journey-panel reveal">
       <div class="section-head">
-        <div><p class="eyebrow">Career</p><h2>Experience & qualifications.</h2></div>
-        <span class="section-index">02</span>
+        <div><p class="eyebrow">Journey</p><h2>Experience, learning & service.</h2></div>
       </div>
 
-      <div class="journey-grid">
-        <article class="career-card">
-          <div class="career-employer">
-            <img src="Mubs-logo.png" alt="MUBS logo" />
-            <div><strong>Makerere University Business School</strong><span>Full-time · 22+ years of service</span></div>
-          </div>
-
-          <div class="career-item active-role">
-            <div class="career-dot"></div>
-            <div>
-              <span class="career-date">Nov 2023 — Present</span>
-              <h3>Head of Human Resources</h3>
-              <p>Kampala, Central Region, Uganda · On-site</p>
-              <small>Human Resources (HR) · Performance Management · +3 additional skills</small>
-            </div>
-          </div>
-
-          <div class="career-item">
-            <div class="career-dot"></div>
-            <div>
-              <span class="career-date">Jul 2014 — Jan 2024</span>
-              <h3>Assistant Director HR</h3>
-              <p>Kampala, Central Region, Uganda</p>
-            </div>
-          </div>
-
-          <div class="career-item compact-role">
-            <div class="career-dot"></div>
-            <div>
-              <span class="career-date">Jul 2010 — Jun 2014</span>
-              <h3>Senior Administrator / HR</h3>
-            </div>
-          </div>
-
-          <div class="career-item compact-role">
-            <div class="career-dot"></div>
-            <div>
-              <span class="career-date">Jun 2008 — Jun 2010</span>
-              <h3>Administrator</h3>
-              <p>Kampala, Central Region, Uganda</p>
-            </div>
-          </div>
-
-          <div class="career-item compact-role">
-            <div class="career-dot"></div>
-            <div>
-              <span class="career-date">Jul 2004 — Jun 2008</span>
-              <h3>Administrative Assistant</h3>
-              <p>Kampala, Central Region, Uganda</p>
-            </div>
-          </div>
+      <div class="journey-layout">
+        <article class="career-summary-card">
+          <div class="career-brand"><img src="Mubs-logo.png" alt="MUBS logo" /><div><strong>Career at a glance</strong><span>Makerere University Business School</span></div></div>
+          <div class="career-stage current"><span class="stage-year">2023 — Present</span><div><h3>Chief, Human Resource</h3><p>Leading the Human Resource function and people agenda.</p></div></div>
+          <div class="career-stage"><span class="stage-year">2014 — 2024</span><div><h3>Assistant Director HR</h3><p>Senior Human Resource leadership and institutional support.</p></div></div>
+          <div class="career-stage"><span class="stage-year">2004 — 2014</span><div><h3>Earlier HR & Administration Roles</h3><p>Senior Administrator / HR, Administrator and Administrative Assistant.</p></div></div>
         </article>
 
-        <article class="qualification-card">
-          <div class="mubs-mini-brand"><img src="Mubs-logo.png" alt="MUBS logo" /><span>Academic & Professional Qualifications</span></div>
-          <div class="qualification"><i class="fa-solid fa-graduation-cap"></i><div><strong>Master of Business Administration</strong><span>Human Resource Management Major</span></div></div>
-          <div class="qualification"><i class="fa-solid fa-graduation-cap"></i><div><strong>Bachelor of Business Administration</strong><span>Business Administration</span></div></div>
-          <div class="qualification"><i class="fa-solid fa-certificate"></i><div><strong>Chartered Human Resource Analyst</strong><span>American Academy of Project Management</span></div></div>
-        </article>
+        <div class="journey-side">
+          <article class="qualification-card simplified-qualifications">
+            <p class="card-label">Qualifications</p>
+            <div class="qualification-line"><i class="fa-solid fa-graduation-cap"></i><div><strong>MBA</strong><span>Human Resource Management</span></div></div>
+            <div class="qualification-line"><i class="fa-solid fa-graduation-cap"></i><div><strong>BBA</strong><span>Business Administration</span></div></div>
+            <div class="qualification-line"><i class="fa-solid fa-certificate"></i><div><strong>Chartered Human Resource Analyst</strong><span>Professional qualification</span></div></div>
+          </article>
+
+          <a class="rotary-card" href="https://rotarykampalaeast.org/about/" target="_blank" rel="noopener">
+            <div class="rotary-mark"><i class="fa-solid fa-gear"></i></div>
+            <div><small>Service & Community</small><strong>Rotarian</strong><span>Rotary Club of Kampala East · Member since 2024</span></div>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
       </div>
     </section>
 
     <section class="panel connect-panel reveal">
-      <div class="section-head">
-        <div><p class="eyebrow">Connect</p><h2>Office, contact & digital presence.</h2></div>
-        <span class="section-index">03</span>
+      <div class="section-head compact-head">
+        <div><p class="eyebrow">Connect</p><h2>Easy to reach. Easy to share.</h2></div>
       </div>
 
-      <div class="office-grid">
+      <div class="connect-grid">
         <article class="office-card">
           <div class="office-title-row">
             <img src="Mubs-logo.png" alt="MUBS logo" class="office-logo" />
-            <div><small>Office Location</small><strong>Makerere University Business School</strong><span>Plot 21A, Port Bell Road, Nakawa, Kampala</span></div>
+            <div><small>Office</small><strong>Makerere University Business School</strong><span>Plot 21A, Port Bell Road, Nakawa, Kampala</span></div>
           </div>
-          <div class="map-frame">
-            <iframe title="Makerere University Business School location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Makerere%20University%20Business%20School%20Nakawa%20Kampala%20Uganda&output=embed"></iframe>
-          </div>
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Makerere+University+Business+School+Nakawa+Kampala+Uganda" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Open in Google Maps</a>
+          <div class="map-frame"><iframe title="Makerere University Business School location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Makerere%20University%20Business%20School%20Nakawa%20Kampala%20Uganda&output=embed"></iframe></div>
+          <div class="office-links"><a href="https://www.google.com/maps/search/?api=1&query=Makerere+University+Business+School+Nakawa+Kampala+Uganda" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Google Maps</a><a href="https://mubs.ac.ug/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> MUBS Website</a></div>
         </article>
 
-        <article class="contact-presence-card">
+        <article class="contact-card">
           <a href="tel:+256700806036"><i class="fa-solid fa-phone"></i><div><small>Phone</small><strong>+256 700 806 036</strong></div></a>
           <a href="#" data-email><i class="fa-regular fa-envelope"></i><div><small>Email</small><strong>cnanyombi@mubs.ac.ug</strong></div></a>
           <a href="https://www.linkedin.com/in/christine-nanyombi-mubiru-2118a454/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i><div><small>LinkedIn</small><strong>Christine Nanyombi Mubiru</strong></div></a>
           <a href="https://www.instagram.com/christinenmubiru?igsi=dTNzY3RyOW1jcTY4" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i><div><small>Instagram</small><strong>@christinenmubiru</strong></div></a>
-          <a href="https://mubs.ac.ug/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i><div><small>Website</small><strong>www.mubs.ac.ug</strong></div></a>
         </article>
       </div>
 
       <button class="qr-card" type="button" data-open-qr>
         <img src="profile-qr.svg" alt="QR code for Christine Nanyombi Mubiru's profile" />
-        <div><small>Share this profile</small><strong>Tap to open QR code</strong><span>Let someone scan and open this profile instantly.</span></div>
+        <div><small>Share this profile</small><strong>Tap to open QR code</strong><span>Scan to open Christine's digital profile.</span></div>
         <i class="fa-solid fa-expand"></i>
       </button>
     </section>
@@ -201,10 +170,7 @@
           <span class="hr-connection hr-connection-right"></span>
           <span class="hr-person hr-person-right"><i class="fa-solid fa-user"></i></span>
         </div>
-        <div class="autominds-copy">
-          <small>Made by</small>
-          <strong><span>AutoMinds</span> <span>Africa</span></strong>
-        </div>
+        <div class="autominds-copy"><small>Made by</small><strong><span>AutoMinds</span> <span>Africa</span></strong></div>
       </a>
     </footer>
   </main>
