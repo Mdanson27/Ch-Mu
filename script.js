@@ -1,22 +1,21 @@
 const WHATSAPP_NUMBER = '256700806036';
-const WHATSAPP_MESSAGE = 'Hello Ms. Mubiru, I came across your professional profile and would like to connect with you regarding a professional matter. Please let me know a convenient time to speak. Kind regards.';
+const WHATSAPP_MESSAGE = 'Hello Ms. Mubiru, I came across your professional profile and would like to connect regarding a professional matter. Please let me know a convenient time to speak. Kind regards.';
 const EMAIL_ADDRESS = 'cnanyombi@mubs.ac.ug';
 const EMAIL_SUBJECT = 'Professional Connection | Christine Nanyombi Mubiru';
 const EMAIL_BODY = 'Dear Ms. Mubiru,\n\nI came across your professional profile and would like to connect regarding a professional matter. Please let me know a convenient time for a brief conversation.\n\nKind regards,';
 
 const loader = document.getElementById('app-loader');
 const typedName = document.getElementById('typed-name');
-const loaderLine = document.querySelector('.loader-line');
 const page = document.getElementById('main-content');
 const qrModal = document.getElementById('qr-modal');
 const nameText = 'Christine Nanyombi Mubiru';
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function prepareContactLinks() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
   const emailUrl = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`;
-  document.querySelectorAll('[data-whatsapp]').forEach((link) => link.setAttribute('href', whatsappUrl));
-  document.querySelectorAll('[data-email]').forEach((link) => link.setAttribute('href', emailUrl));
+  document.querySelectorAll('[data-whatsapp]').forEach(link => link.setAttribute('href', whatsappUrl));
+  document.querySelectorAll('[data-email]').forEach(link => link.setAttribute('href', emailUrl));
 }
 
 async function typeName() {
@@ -24,36 +23,17 @@ async function typeName() {
   typedName.textContent = '';
   for (const char of nameText) {
     typedName.textContent += char;
-    await sleep(char === ' ' ? 25 : 43);
+    await sleep(char === ' ' ? 24 : 42);
   }
 }
 
 async function runLoader() {
   await sleep(220);
   await typeName();
-  loaderLine?.classList.add('ready');
-  await sleep(460);
+  await sleep(500);
   loader?.classList.add('fade-out');
   page?.classList.remove('is-hidden');
   document.body.classList.add('page-ready');
-  revealOnScroll();
-}
-
-function revealOnScroll() {
-  const items = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) {
-    items.forEach((item) => item.classList.add('visible'));
-    return;
-  }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.09 });
-  items.forEach((item) => observer.observe(item));
 }
 
 function buildVCard() {
@@ -100,9 +80,9 @@ function closeQr() {
   document.body.classList.remove('modal-lock');
 }
 
-document.querySelectorAll('[data-open-qr]').forEach((button) => button.addEventListener('click', openQr));
-document.querySelectorAll('[data-close-qr]').forEach((button) => button.addEventListener('click', closeQr));
-document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeQr(); });
+document.querySelectorAll('[data-open-qr]').forEach(button => button.addEventListener('click', openQr));
+document.querySelectorAll('[data-close-qr]').forEach(button => button.addEventListener('click', closeQr));
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closeQr(); });
 
 prepareContactLinks();
 window.addEventListener('load', runLoader);
