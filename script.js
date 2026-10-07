@@ -5,10 +5,10 @@ const EMAIL_SUBJECT = 'Professional Connection | Christine Nanyombi Mubiru';
 const EMAIL_BODY = 'Dear Ms. Mubiru,\n\nI came across your professional profile and would like to connect regarding a professional matter. Please let me know a convenient time for a brief conversation.\n\nKind regards,';
 
 const loader = document.getElementById('app-loader');
-const typedName = document.getElementById('typed-name');
 const page = document.getElementById('main-content');
 const qrModal = document.getElementById('qr-modal');
-const nameText = 'Christine Nanyombi Mubiru';
+const stickyDock = document.querySelector('.sticky-dock');
+const footer = document.getElementById('autominds-footer');
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function prepareContactLinks() {
@@ -18,19 +18,10 @@ function prepareContactLinks() {
   document.querySelectorAll('[data-email]').forEach(link => link.setAttribute('href', emailUrl));
 }
 
-async function typeName() {
-  if (!typedName) return;
-  typedName.textContent = '';
-  for (const char of nameText) {
-    typedName.textContent += char;
-    await sleep(char === ' ' ? 24 : 42);
-  }
-}
-
 async function runLoader() {
-  await sleep(220);
-  await typeName();
-  await sleep(500);
+  await sleep(80);
+  loader?.classList.add('loader-active');
+  await sleep(1800);
   loader?.classList.add('fade-out');
   page?.classList.remove('is-hidden');
   document.body.classList.add('page-ready');
@@ -73,6 +64,7 @@ function openQr() {
   qrModal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('modal-lock');
 }
+
 function closeQr() {
   if (!qrModal) return;
   qrModal.classList.remove('open');
@@ -84,5 +76,14 @@ document.querySelectorAll('[data-open-qr]').forEach(button => button.addEventLis
 document.querySelectorAll('[data-close-qr]').forEach(button => button.addEventListener('click', closeQr));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeQr(); });
 
+function manageStickyDock() {
+  if (!footer || !stickyDock || !('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => stickyDock.classList.toggle('dock-hidden', entry.isIntersecting));
+  }, { threshold: 0.12 });
+  observer.observe(footer);
+}
+
 prepareContactLinks();
+manageStickyDock();
 window.addEventListener('load', runLoader);
