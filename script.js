@@ -1,8 +1,8 @@
 const WHATSAPP_NUMBER = '256700806036';
-const WHATSAPP_MESSAGE = 'Hello Ms. Mubiru, I came across your digital profile and would like to connect regarding a professional matter. Kindly let me know a convenient time for a brief conversation. Thank you.';
+const WHATSAPP_MESSAGE = 'Hello Ms. Mubiru, I came across your professional profile and would like to connect with you regarding a professional matter. Please let me know a convenient time to speak. Kind regards.';
 const EMAIL_ADDRESS = 'cnanyombi@mubs.ac.ug';
-const EMAIL_SUBJECT = 'Professional Enquiry – Christine Nanyombi Mubiru';
-const EMAIL_BODY = 'Dear Ms. Mubiru,\n\nI came across your digital profile and would like to connect regarding a professional matter. Kindly let me know a convenient time for a brief discussion.\n\nKind regards,';
+const EMAIL_SUBJECT = 'Professional Connection | Christine Nanyombi Mubiru';
+const EMAIL_BODY = 'Dear Ms. Mubiru,\n\nI came across your professional profile and would like to connect regarding a professional matter. Please let me know a convenient time for a brief conversation.\n\nKind regards,';
 
 const loader = document.getElementById('app-loader');
 const typedName = document.getElementById('typed-name');
@@ -24,15 +24,15 @@ async function typeName() {
   typedName.textContent = '';
   for (const char of nameText) {
     typedName.textContent += char;
-    await sleep(char === ' ' ? 26 : 44);
+    await sleep(char === ' ' ? 25 : 43);
   }
 }
 
 async function runLoader() {
-  await sleep(260);
+  await sleep(220);
   await typeName();
   loaderLine?.classList.add('ready');
-  await sleep(520);
+  await sleep(460);
   loader?.classList.add('fade-out');
   page?.classList.remove('is-hidden');
   document.body.classList.add('page-ready');
@@ -52,7 +52,7 @@ function revealOnScroll() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.09 });
   items.forEach((item) => observer.observe(item));
 }
 
@@ -63,7 +63,7 @@ function buildVCard() {
     'N:Mubiru;Christine Nanyombi;;;',
     'FN:Christine Nanyombi Mubiru',
     'ORG:Makerere University Business School',
-    'TITLE:Chief Human Resources Officer',
+    'TITLE:Chief, Human Resource',
     'TEL;TYPE=CELL:+256700806036',
     'EMAIL;TYPE=WORK:cnanyombi@mubs.ac.ug',
     'URL:https://mubs.ac.ug/',
@@ -93,7 +93,6 @@ function openQr() {
   qrModal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('modal-lock');
 }
-
 function closeQr() {
   if (!qrModal) return;
   qrModal.classList.remove('open');
