@@ -76,19 +76,37 @@
 /* Keep the focus-area card quiet so Rotary feels intentionally separated. */
 .expertise-card{margin-top:6px!important;background:rgba(255,255,255,.82)!important;border-color:#dfe6e3!important;box-shadow:0 8px 24px rgba(22,56,76,.05)!important}
 
-/* Christine review — bring headings back into proportion with body copy. */
+/* Christine review — distinctive, elegant name treatment without oversized typography. */
 .hero-copy h1{
-  font-size:clamp(2.75rem,6.5vw,4.7rem)!important;
-  line-height:.94!important;
-  letter-spacing:-.036em!important;
+  margin:8px 0 0!important;
+  max-width:680px;
+  font-size:clamp(2.7rem,5.5vw,4.35rem)!important;
+  line-height:.98!important;
+  letter-spacing:-.034em!important;
+  text-wrap:balance;
+}
+.hero-copy h1 span{
+  color:var(--navy-soft)!important;
+  font-size:.92em;
+  font-weight:600;
+}
+.hero-copy h1::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:3px;
+  margin-top:13px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--coral),var(--sage));
+  opacity:.9;
 }
 .section-intro h2{
   font-size:clamp(2rem,4.2vw,3.05rem)!important;
   line-height:1.02!important;
   letter-spacing:-.028em!important;
 }
-.hero-role-block{margin-top:18px!important}
-.hero-note{margin-top:14px!important;max-width:540px!important}
+.hero-role-block{margin-top:15px!important}
+.hero-note{margin-top:13px!important;max-width:540px!important}
 
 /* Christine requested first-person wording on her own digital profile. */
 #profile .section-intro>p{
@@ -126,12 +144,17 @@
   .rotary-card::after{display:none}
 
   .hero-copy h1{
-    font-size:clamp(2.6rem,11.8vw,3.75rem)!important;
-    line-height:.96!important;
+    max-width:100%;
+    font-size:clamp(2.45rem,10.8vw,3.25rem)!important;
+    line-height:1!important;
+    letter-spacing:-.03em!important;
   }
+  .hero-copy h1 span{font-size:.9em}
+  .hero-copy h1::after{width:56px;height:3px;margin-top:10px}
   .section-intro h2{
     font-size:clamp(1.95rem,9vw,2.45rem)!important;
     line-height:1.04!important;
   }
+  .hero-role-block{margin-top:13px!important}
   #profile .section-intro>p::after{font-size:.76rem}
 }
