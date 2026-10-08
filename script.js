@@ -5,10 +5,12 @@ const EMAIL_SUBJECT = 'Professional Connection | Christine Nanyombi Mubiru';
 const EMAIL_BODY = 'Dear Ms. Mubiru,\n\nI came across your professional profile and would like to connect regarding a professional matter. Please let me know a convenient time for a brief conversation.\n\nKind regards,';
 
 const loader = document.getElementById('app-loader');
+const typedName = document.getElementById('typed-name');
 const page = document.getElementById('main-content');
 const qrModal = document.getElementById('qr-modal');
 const stickyDock = document.querySelector('.sticky-dock');
 const footer = document.getElementById('autominds-footer');
+const nameText = 'Christine Nanyombi Mubiru';
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function prepareContactLinks() {
@@ -18,10 +20,21 @@ function prepareContactLinks() {
   document.querySelectorAll('[data-email]').forEach(link => link.setAttribute('href', emailUrl));
 }
 
+async function typeName() {
+  if (!typedName) return;
+  typedName.textContent = '';
+  for (const char of nameText) {
+    typedName.textContent += char;
+    await sleep(char === ' ' ? 28 : 50);
+  }
+}
+
 async function runLoader() {
-  await sleep(80);
-  loader?.classList.add('loader-active');
-  await sleep(1800);
+  await sleep(100);
+  loader?.classList.add('animate-in');
+  await sleep(950);
+  await typeName();
+  await sleep(520);
   loader?.classList.add('fade-out');
   page?.classList.remove('is-hidden');
   document.body.classList.add('page-ready');
