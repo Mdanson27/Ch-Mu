@@ -162,3 +162,43 @@
   .hero-role-block{margin-top:12px!important}
   #profile .section-intro>p::after{font-size:.76rem}
 }
+
+/* Final typography scale from Christine's review: major headings should be only one or two visual steps above the surrounding text. */
+.hero-copy h1{
+  font-size:clamp(1.95rem,3.4vw,2.75rem)!important;
+  line-height:1.08!important;
+  letter-spacing:-.02em!important;
+  max-width:560px!important;
+}
+.hero-copy h1 span{
+  font-size:.96em!important;
+  font-weight:600!important;
+}
+.hero-copy h1::after{
+  width:46px!important;
+  height:2px!important;
+  margin-top:9px!important;
+}
+.section-intro h2{
+  font-size:clamp(1.35rem,2.2vw,1.75rem)!important;
+  line-height:1.18!important;
+  letter-spacing:-.012em!important;
+  max-width:560px!important;
+}
+.role{font-size:1rem!important}
+.institution{font-size:.88rem!important}
+.hero-note{font-size:.9rem!important}
+
+@media(max-width:760px){
+  .hero-copy h1{
+    font-size:clamp(1.82rem,7.2vw,2.28rem)!important;
+    line-height:1.09!important;
+    letter-spacing:-.018em!important;
+  }
+  .hero-copy h1::after{width:42px!important;margin-top:8px!important}
+  .section-intro h2{
+    font-size:clamp(1.3rem,5.6vw,1.58rem)!important;
+    line-height:1.18!important;
+    letter-spacing:-.01em!important;
+  }
+}
