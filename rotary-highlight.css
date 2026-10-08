@@ -76,13 +76,13 @@
 /* Keep the focus-area card quiet so Rotary feels intentionally separated. */
 .expertise-card{margin-top:6px!important;background:rgba(255,255,255,.82)!important;border-color:#dfe6e3!important;box-shadow:0 8px 24px rgba(22,56,76,.05)!important}
 
-/* Christine review — distinctive, elegant name treatment without oversized typography. */
+/* Christine review — keep the name distinguished, but bring it closer to the scale of the surrounding content. */
 .hero-copy h1{
   margin:8px 0 0!important;
-  max-width:680px;
-  font-size:clamp(2.7rem,5.5vw,4.35rem)!important;
-  line-height:.98!important;
-  letter-spacing:-.034em!important;
+  max-width:640px;
+  font-size:clamp(2.4rem,4.8vw,3.85rem)!important;
+  line-height:1!important;
+  letter-spacing:-.03em!important;
   text-wrap:balance;
 }
 .hero-copy h1 span{
@@ -93,20 +93,23 @@
 .hero-copy h1::after{
   content:"";
   display:block;
-  width:72px;
+  width:64px;
   height:3px;
-  margin-top:13px;
+  margin-top:11px;
   border-radius:999px;
   background:linear-gradient(90deg,var(--coral),var(--sage));
   opacity:.9;
 }
+
+/* Keep section titles such as “Leadership built around people.” and “Easy to reach. Easy to share.” noticeable without overwhelming the content. */
 .section-intro h2{
-  font-size:clamp(2rem,4.2vw,3.05rem)!important;
-  line-height:1.02!important;
-  letter-spacing:-.028em!important;
+  font-size:clamp(1.75rem,3.4vw,2.55rem)!important;
+  line-height:1.08!important;
+  letter-spacing:-.022em!important;
+  max-width:640px;
 }
-.hero-role-block{margin-top:15px!important}
-.hero-note{margin-top:13px!important;max-width:540px!important}
+.hero-role-block{margin-top:14px!important}
+.hero-note{margin-top:12px!important;max-width:540px!important}
 
 /* Christine requested first-person wording on her own digital profile. */
 #profile .section-intro>p{
@@ -145,16 +148,17 @@
 
   .hero-copy h1{
     max-width:100%;
-    font-size:clamp(2.45rem,10.8vw,3.25rem)!important;
-    line-height:1!important;
-    letter-spacing:-.03em!important;
+    font-size:clamp(2.15rem,9.1vw,2.9rem)!important;
+    line-height:1.02!important;
+    letter-spacing:-.026em!important;
   }
   .hero-copy h1 span{font-size:.9em}
-  .hero-copy h1::after{width:56px;height:3px;margin-top:10px}
+  .hero-copy h1::after{width:50px;height:3px;margin-top:9px}
   .section-intro h2{
-    font-size:clamp(1.95rem,9vw,2.45rem)!important;
-    line-height:1.04!important;
+    font-size:clamp(1.62rem,7.2vw,2.05rem)!important;
+    line-height:1.1!important;
+    letter-spacing:-.018em!important;
   }
-  .hero-role-block{margin-top:13px!important}
+  .hero-role-block{margin-top:12px!important}
   #profile .section-intro>p::after{font-size:.76rem}
 }
