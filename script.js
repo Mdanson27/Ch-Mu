@@ -1,3 +1,8 @@
+const rotaryStyles = document.createElement('link');
+rotaryStyles.rel = 'stylesheet';
+rotaryStyles.href = 'rotary-highlight.css';
+document.head.appendChild(rotaryStyles);
+
 const WHATSAPP_NUMBER = '256700806036';
 const WHATSAPP_MESSAGE = 'Hello Ms. Mubiru, I came across your professional profile and would like to connect regarding a professional matter. Please let me know a convenient time to speak. Kind regards.';
 const EMAIL_ADDRESS = 'cnanyombi@mubs.ac.ug';
