@@ -239,3 +239,42 @@
     line-height:1.28!important;
   }
 }
+
+/* Christine's final landing-page spacing review: remove redundant air above the intro and below Explore. */
+@media(max-width:760px){
+  .hero-screen{
+    min-height:auto!important;
+    justify-content:flex-start!important;
+    padding-top:72px!important;
+    padding-bottom:16px!important;
+  }
+  .top-brand{
+    top:12px!important;
+  }
+  .hero-grid{
+    padding-top:0!important;
+    gap:10px!important;
+    align-items:start!important;
+  }
+  .hero-copy{
+    margin-top:0!important;
+    padding-top:0!important;
+  }
+  .hero-copy .kicker{
+    margin-top:0!important;
+    margin-bottom:6px!important;
+  }
+  .hero-actions{
+    margin-top:16px!important;
+  }
+  .secondary-row{
+    margin-top:10px!important;
+  }
+  .hero-screen .scroll-hint{
+    position:static!important;
+    left:auto!important;
+    bottom:auto!important;
+    align-self:flex-start!important;
+    margin:14px 0 0!important;
+  }
+}
