@@ -202,3 +202,40 @@
     letter-spacing:-.01em!important;
   }
 }
+
+/* FINAL SCALE: titles are now only one visual size above the surrounding text. */
+.hero-copy h1{
+  font-size:clamp(1.35rem,2.25vw,1.65rem)!important;
+  line-height:1.16!important;
+  letter-spacing:-.01em!important;
+  max-width:520px!important;
+}
+.hero-copy h1 span{
+  font-size:1em!important;
+}
+.hero-copy h1::after{
+  width:38px!important;
+  height:2px!important;
+  margin-top:7px!important;
+}
+.section-intro h2{
+  font-size:clamp(1.08rem,1.55vw,1.22rem)!important;
+  line-height:1.28!important;
+  letter-spacing:0!important;
+  max-width:520px!important;
+}
+.role{font-size:.96rem!important}
+.institution{font-size:.86rem!important}
+.hero-note{font-size:.88rem!important}
+
+@media(max-width:760px){
+  .hero-copy h1{
+    font-size:clamp(1.28rem,5vw,1.48rem)!important;
+    line-height:1.18!important;
+  }
+  .hero-copy h1::after{width:34px!important;margin-top:6px!important}
+  .section-intro h2{
+    font-size:clamp(1.03rem,4vw,1.14rem)!important;
+    line-height:1.28!important;
+  }
+}
