@@ -30,16 +30,17 @@ async function typeName() {
   typedName.textContent = '';
   for (const char of nameText) {
     typedName.textContent += char;
-    await sleep(char === ' ' ? 28 : 50);
+    await sleep(char === ' ' ? 32 : 54);
   }
 }
 
 async function runLoader() {
   await sleep(100);
   loader?.classList.add('animate-in');
-  await sleep(950);
+  // Let the flower fully bloom before the name begins typing.
+  await sleep(1450);
   await typeName();
-  await sleep(520);
+  await sleep(620);
   loader?.classList.add('fade-out');
   page?.classList.remove('is-hidden');
   document.body.classList.add('page-ready');
