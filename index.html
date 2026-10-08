@@ -12,21 +12,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="loader-flower.css" />
 </head>
 <body>
-  <div id="app-loader" class="app-loader" aria-live="polite" aria-label="Opening Christine Nanyombi Mubiru profile">
-    <div class="loader-symbol" aria-hidden="true">
-      <svg viewBox="0 0 180 100" role="presentation">
-        <path class="loader-path path-one" d="M26 69 C48 23 83 19 94 52 S139 84 155 38" />
-        <path class="loader-path path-two" d="M34 37 C62 72 93 22 126 55" />
-      </svg>
-      <span class="loader-person person-a"></span>
-      <span class="loader-person person-b"></span>
-      <span class="loader-person person-c"></span>
+  <div id="app-loader" class="app-loader flower-screen" aria-live="polite" aria-label="Opening Christine Nanyombi Mubiru profile">
+    <div class="flower-stage" aria-hidden="true">
+      <div class="flower-halo"></div>
+      <div class="flower-bloom">
+        <span class="petal petal-1"></span>
+        <span class="petal petal-2"></span>
+        <span class="petal petal-3"></span>
+        <span class="petal petal-4"></span>
+        <span class="petal petal-5"></span>
+        <span class="petal petal-6"></span>
+        <span class="petal petal-7"></span>
+        <span class="petal petal-8"></span>
+        <span class="flower-centre"></span>
+      </div>
+      <span class="flower-stem"></span>
+      <span class="flower-leaf leaf-left"></span>
+      <span class="flower-leaf leaf-right"></span>
+      <span class="flower-spark spark-1"></span>
+      <span class="flower-spark spark-2"></span>
+      <span class="flower-spark spark-3"></span>
     </div>
-    <p class="loader-kicker">People · Culture · Growth</p>
-    <h1 class="loader-title">Christine Nanyombi Mubiru</h1>
-    <div class="loader-rule"><span></span></div>
+    <p class="flower-loader-kicker">People · Culture · Growth</p>
+    <div class="loader-name-row">
+      <h1 id="typed-name" class="typed-loader-name"></h1>
+      <span class="typed-loader-cursor"></span>
+    </div>
   </div>
 
   <main id="main-content" class="profile is-hidden">
