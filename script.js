@@ -110,6 +110,7 @@ const qrModal = document.getElementById('qr-modal');
 const stickyDock = document.querySelector('.sticky-dock');
 const footer = document.getElementById('autominds-footer');
 const nameText = 'Christine Nanyombi Mubiru';
+const credentialText = ', CHRA';
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function prepareContactLinks() {
@@ -122,9 +123,22 @@ function prepareContactLinks() {
 async function typeName() {
   if (!typedName) return;
   typedName.textContent = '';
+
+  const nameNode = document.createTextNode('');
+  typedName.appendChild(nameNode);
+
   for (const char of nameText) {
-    typedName.textContent += char;
+    nameNode.textContent += char;
     await sleep(char === ' ' ? 32 : 54);
+  }
+
+  const credential = document.createElement('span');
+  credential.className = 'loader-credential';
+  typedName.appendChild(credential);
+
+  for (const char of credentialText) {
+    credential.textContent += char;
+    await sleep(char === ' ' ? 28 : 46);
   }
 }
 
