@@ -109,8 +109,8 @@ const page = document.getElementById('main-content');
 const qrModal = document.getElementById('qr-modal');
 const stickyDock = document.querySelector('.sticky-dock');
 const footer = document.getElementById('autominds-footer');
-const nameText = 'Christine Nanyombi Mubiru';
-const credentialText = ', CHRA';
+const nameText = 'Christine Nanyombi Mubiru,';
+const credentialText = 'CHRA';
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function prepareContactLinks() {
